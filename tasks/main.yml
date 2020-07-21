@@ -1,0 +1,24 @@
+---
+# tasks file for tlp
+- name: include assert.yml
+  include_tasks: assert.yml
+
+- name: install software
+  package:
+    name: "{{ tlp_packages }}"
+    state: present
+
+- name: set theshold
+  command: tlp setcharge {{ item.start_threshold }} {{ item.stop_threshold }} {{ item.name }}
+  loop: "{{ tlp_batteries }}"
+  loop_control:
+    label: "{{ item.name }}"
+  register: tpl_set_threshold
+  changed_when:
+    - '"no change" not in tpl_set_threshold.stdout'
+
+- name: start and enable software
+  service:
+    name: "{{ tlp_service }}"
+    state: started
+    enabled: true

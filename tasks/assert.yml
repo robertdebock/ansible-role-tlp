@@ -1,0 +1,64 @@
+---
+- name: test if tlp_batteries is set correctly
+  assert:
+    that:
+      - tlp_batteries is defined
+      - tlp_batteries | length > 0
+      - tlp_batteries is iterable
+    quiet: yes
+
+- name: test if item.name in tlp_batteries is set correctly
+  assert:
+    that:
+      - item.name is defined
+      - item.name | length > 0
+      - item.name in ["BAT0", "BAT1"]
+    quiet: yes
+  loop: "{{ tlp_batteries }}"
+  loop_control:
+    label: "{{ item.name }}"
+
+- name: test if item.start_threshold in tlp_batteries is set correctly
+  assert:
+    that:
+      - item.start_threshold is defined
+      - item.start_threshold | int
+      - item.start_threshold | int >= 1
+      - item.start_threshold | int <= 100
+    quiet: yes
+  loop: "{{ tlp_batteries }}"
+  loop_control:
+    label: "{{ item.name }}"
+
+- name: test if item.stop_threshold in tlp_batteries is set correctly
+  assert:
+    that:
+      - item.stop_threshold is defined
+      - item.stop_threshold | int
+      - item.stop_threshold | int >= 1
+      - item.stop_threshold | int <= 100
+    quiet: yes
+  loop: "{{ tlp_batteries }}"
+  loop_control:
+    label: "{{ item.name }}"
+
+- name: test if start_threshold and stop_threshold are set correctly
+  assert:
+    that:
+      - item.start_threshold < item.stop_threshold
+    quiet: yes
+  loop: "{{ tlp_batteries }}"
+  loop_control:
+    label: "{{ item.name }}"
+
+# - name: test if tlp_X is set correctly
+#   assert:
+#     that:
+#       - tlp_X is defined
+#       - tlp_X | length > 0
+#       - tlp_X is iterable
+#       - tlp_X | int
+#       - tlp_X | int >= 0
+#       - tlp_X | type_debug == "bool"
+#       - tlp_X in ["a", "b"]
+#     quiet: yes

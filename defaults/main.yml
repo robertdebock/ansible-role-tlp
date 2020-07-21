@@ -1,0 +1,9 @@
+---
+# defaults file for tlp
+tlp_batteries:
+  - name: BAT0
+    start_threshold: 70
+    stop_threshold: 90
+  - name: BAT1
+    start_threshold: 70
+    stop_threshold: 90

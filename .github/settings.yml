@@ -1,0 +1,7 @@
+---
+#
+# Ansible managed
+#
+repository:
+  description: Save laptop battery power using TLP
+  homepage: https://robertdebock.nl/
