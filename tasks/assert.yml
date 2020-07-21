@@ -2,10 +2,11 @@
 - name: test if tlp_batteries is set correctly
   assert:
     that:
-      - tlp_batteries is defined
       - tlp_batteries | length > 0
       - tlp_batteries is iterable
     quiet: yes
+  when:
+    - tlp_batteries is defined
 
 - name: test if item.name in tlp_batteries is set correctly
   assert:
@@ -17,6 +18,8 @@
   loop: "{{ tlp_batteries }}"
   loop_control:
     label: "{{ item.name }}"
+  when:
+    - tlp_batteries is defined
 
 - name: test if item.start_threshold in tlp_batteries is set correctly
   assert:
@@ -29,6 +32,8 @@
   loop: "{{ tlp_batteries }}"
   loop_control:
     label: "{{ item.name }}"
+  when:
+    - tlp_batteries is defined
 
 - name: test if item.stop_threshold in tlp_batteries is set correctly
   assert:
@@ -41,6 +46,8 @@
   loop: "{{ tlp_batteries }}"
   loop_control:
     label: "{{ item.name }}"
+  when:
+    - tlp_batteries is defined
 
 - name: test if start_threshold and stop_threshold are set correctly
   assert:
@@ -50,15 +57,5 @@
   loop: "{{ tlp_batteries }}"
   loop_control:
     label: "{{ item.name }}"
-
-# - name: test if tlp_X is set correctly
-#   assert:
-#     that:
-#       - tlp_X is defined
-#       - tlp_X | length > 0
-#       - tlp_X is iterable
-#       - tlp_X | int
-#       - tlp_X | int >= 0
-#       - tlp_X | type_debug == "bool"
-#       - tlp_X in ["a", "b"]
-#     quiet: yes
+  when:
+    - tlp_batteries is defined
