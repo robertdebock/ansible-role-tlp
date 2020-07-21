@@ -13,6 +13,8 @@
   loop: "{{ tlp_batteries }}"
   loop_control:
     label: "{{ item.name }}"
+  when:
+    - tlp_batteries is defined
   register: tpl_set_threshold
   changed_when:
     - '"no change" not in tpl_set_threshold.stdout'

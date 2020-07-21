@@ -53,13 +53,17 @@ These variables are set in `defaults/main.yml`:
 ```yaml
 ---
 # defaults file for tlp
-tlp_batteries:
-  - name: BAT0
-    start_threshold: 70
-    stop_threshold: 90
-  - name: BAT1
-    start_threshold: 70
-    stop_threshold: 90
+
+# You can configure start and stop thresholds per battery.
+# In CI there are not batteries, so disabling this list by default.
+
+# tlp_batteries:
+#   - name: BAT0
+#     start_threshold: 70
+#     stop_threshold: 90
+#   - name: BAT1
+#     start_threshold: 70
+#     stop_threshold: 90
 ```
 
 ## [Requirements](#requirements)
@@ -140,10 +144,6 @@ image="debian" tag="stable" tox
 ## [License](#license)
 
 Apache-2.0
-
-## [Contributors](#contributors)
-
-I'd like to thank everybody that made contributions to this repository. It motivates me, improves the code and is just fun to collaborate.
 
 
 ## [Author Information](#author-information)
