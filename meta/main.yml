@@ -8,12 +8,9 @@ galaxy_info:
   min_ansible_version: 2.8
 
   platforms:
-    - name: Alpine
-      versions:
-        - all
     - name: Debian
       versions:
-        - all
+        - buster
     - name: EL
       versions:
         - 7
@@ -26,7 +23,8 @@ galaxy_info:
         - all
     - name: Ubuntu
       versions:
-        - all
+        - bionic
+        - xenial
 
   galaxy_tags:
     - tlp

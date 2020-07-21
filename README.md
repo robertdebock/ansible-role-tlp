@@ -94,12 +94,11 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 
 |container|tags|
 |---------|----|
-|alpine|all|
-|debian|all|
+|debian|buster|
 |el|7, 8|
 |fedora|all|
 |opensuse|all|
-|ubuntu|all|
+|ubuntu|bionic, xenial|
 
 The minimum version of Ansible required is 2.8 but tests have been done to:
 
@@ -107,6 +106,15 @@ The minimum version of Ansible required is 2.8 but tests have been done to:
 - The current version.
 - The development version.
 
+## [Exceptions](#exceptions)
+
+Some variarations of the build matrix do not work. These are the variations and reasons why the build won't work:
+
+| variation                 | reason                 |
+|---------------------------|------------------------|
+| ubuntu:latest | Can't locate Tie/Hash/NamedCapture.pm in @INC |
+| debian:bullseye | Can't locate Tie/Hash/NamedCapture.pm in @INC |
+| alpine | Starting TLP is not idempotent. |
 
 
 ## [Testing](#testing)
