@@ -4,7 +4,7 @@ Save laptop battery power using TLP
 
 |Travis|GitHub|Quality|Downloads|Version|
 |------|------|-------|---------|-------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-tlp.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-tlp)|[![github](https://github.com/robertdebock/ansible-role-tlp/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-tlp/actions)|[![quality](https://img.shields.io/ansible/quality/)](https://galaxy.ansible.com/robertdebock/tlp)|[![downloads](https://img.shields.io/ansible/role/d/)](https://galaxy.ansible.com/robertdebock/tlp)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-tlp.svg)](https://github.com/robertdebock/ansible-role-tlp/releases/)|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-tlp.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-tlp)|[![github](https://github.com/robertdebock/ansible-role-tlp/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-tlp/actions)|[![quality](https://img.shields.io/ansible/quality/49809)](https://galaxy.ansible.com/robertdebock/tlp)|[![downloads](https://img.shields.io/ansible/role/d/49809)](https://galaxy.ansible.com/robertdebock/tlp)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-tlp.svg)](https://github.com/robertdebock/ansible-role-tlp/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
