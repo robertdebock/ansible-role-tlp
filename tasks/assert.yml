@@ -13,7 +13,7 @@
     that:
       - item.name is defined
       - item.name | length > 0
-      - item.name in ["BAT0", "BAT1"]
+      - item.name in [ "BAT0", "BAT1" ]
     quiet: yes
   loop: "{{ tlp_batteries }}"
   loop_control:
