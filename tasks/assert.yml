@@ -2,7 +2,6 @@
 - name: test if tlp_batteries is set correctly
   assert:
     that:
-      - tlp_batteries | length > 0
       - tlp_batteries is iterable
     quiet: yes
   when:
@@ -12,7 +11,6 @@
   assert:
     that:
       - item.name is defined
-      - item.name | length > 0
       - item.name in [ "BAT0", "BAT1" ]
     quiet: yes
   loop: "{{ tlp_batteries }}"
