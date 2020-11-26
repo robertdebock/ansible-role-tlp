@@ -1,4 +1,5 @@
 ---
+
 - name: test if tlp_batteries is set correctly
   assert:
     that:
