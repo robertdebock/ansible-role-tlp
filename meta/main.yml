@@ -24,7 +24,6 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - bionic
-        - xenial
 
   galaxy_tags:
     - tlp
