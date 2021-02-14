@@ -1,7 +1,7 @@
 ---
 
 - name: test if tlp_batteries is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - tlp_batteries is iterable
     quiet: yes
@@ -9,7 +9,7 @@
     - tlp_batteries is defined
 
 - name: test if item.name in tlp_batteries is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - item.name is defined
       - item.name is string
@@ -22,7 +22,7 @@
     - tlp_batteries is defined
 
 - name: test if item.start_threshold in tlp_batteries is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - item.start_threshold is defined
       - item.start_threshold is number
@@ -36,7 +36,7 @@
     - tlp_batteries is defined
 
 - name: test if item.stop_threshold in tlp_batteries is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - item.stop_threshold is defined
       - item.stop_threshold is number
@@ -50,7 +50,7 @@
     - tlp_batteries is defined
 
 - name: test if start_threshold and stop_threshold are set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - item.start_threshold < item.stop_threshold
     quiet: yes
