@@ -1,4 +1,4 @@
-# Ansible role [tlp](#tlp)
+# [Ansible role tlp](#tlp)
 
 Save laptop battery power using TLP
 
