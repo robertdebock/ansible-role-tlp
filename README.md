@@ -1,5 +1,7 @@
 # [Ansible role tlp](#tlp)
 
+> THIS ROLE HAS BEEN ARCHIVED AS OF DEC 2023.
+
 Save laptop battery power using TLP
 
 |GitHub|GitLab|Downloads|Version|
